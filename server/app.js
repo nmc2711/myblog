@@ -7,8 +7,10 @@ import hpp from "hpp";
 import cors from "cors";
 
 // Routes
-import postRouter from "./routes/api/post";
-import userRouter from "./routes/api/user";
+import postRoutes from "./routes/api/post";
+import userRoutes from "./routes/api/user";
+import authRoutes from "./routes/api/auth";
+
 const app = express();
 const { MONGO_URI } = config;
 
@@ -32,6 +34,8 @@ mongoose
 // Use Routes
 
 app.get("/");
-app.use("/api/post", postRouter);
-app.use("/api/user", userRouter);
+app.use("/api/post", postRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
+
 export default app;
