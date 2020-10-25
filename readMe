@@ -1,0 +1,31 @@
+### install
+
+<< BackEnd >>
+
+1.  npm i express cors dotenv hpp helmet
+
+** express : node.js 서버 환경 구축을 설치하기 위한 프레임워크
+** cors : 교차출처 리소스 공유 ( 자유로운 리소스 공유)
+** dotenv : 비밀소스 입출력
+** hpp helmet : 서버 보안
+
+2. npm i mongoose moment
+
+** mongoose : 몽고DB 자바스크립트를 통한 접근 및 활용
+** moment :  utc시간을 사용하는 몽고DB 환경을 세팅  
+
+3. npm i morgan nodemon -D
+
+** morgan : 서버 로그 기록
+** nodemon : 파일 저장시 서버 즉각 반영위해 서버 재실행
+
+<< FrontEnd >>
+
+1. npm i @babel/cli @babel/core @babel/node @babel/preset-env babel-loader @babel/polyfill -D
+
+** @babel/cli : babel을 터미널에서 명령어 처럼 사용
+** @babel/core : es6 변환
+** @babel/preset-env : 변환 환경세팅
+** babel-loader : 문법 최종 컴파일
+** @babel/polyfill : 최신 문법 사용세팅 
+
