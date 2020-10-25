@@ -19,6 +19,8 @@
 ** morgan : 서버 로그 기록
 ** nodemon : 파일 저장시 서버 즉각 반영위해 서버 재실행
 
+4. npm i bcryptjs jsonwebtoken
+
 << FrontEnd >>
 
 1. npm i @babel/cli @babel/core @babel/node @babel/preset-env babel-loader @babel/polyfill -D
