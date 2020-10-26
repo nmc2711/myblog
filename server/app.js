@@ -18,6 +18,7 @@ app.use(hpp());
 app.use(helmet());
 
 app.use(cors({ origin: true, credentials: true }));
+//cors 메인 또는 포트가 다른 서버의 자원을 요청하는 매커니즘 origin all,credentials respon 헤더추가
 app.use(morgan("dev"));
 
 app.use(express.json());
