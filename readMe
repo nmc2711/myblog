@@ -32,3 +32,11 @@
 ** @babel/polyfill : 최신 문법 사용세팅 
 
 2. npx create-react-app .
+
+3. npm i redux react-redux redux-saga react-router-dom connected-react-router bootstrap reactstrap dotenv
+
+** redux react-redux redux-saga 상태관리
+** react-router-dom 라우터 관리
+** connected-react-router 리덕스 환경 라우터 관리
+
+4. npm i history
