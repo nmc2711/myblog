@@ -40,3 +40,5 @@
 ** connected-react-router 리덕스 환경 라우터 관리
 
 4. npm i history
+
+5. npm i node-sass sass-loader

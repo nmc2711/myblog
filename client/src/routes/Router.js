@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 const MyRouter = () => (
   <Fragment>
     <Header />
-    <h1>Hello Body</h1>;
+    <h1>Hello Body</h1>
     <Footer />
   </Fragment>
 );

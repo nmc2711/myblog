@@ -1,0 +1,23 @@
+.mr6 {
+  margin-right: 6px;
+}
+.pdl10 {
+  padding-left: 10px;
+}
+
+#main-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  background: #343a40;
+  color: #fff;
+}
+
+#page-header {
+  height: 200px;
+  padding-top: 60px;
+  background: url("./img/react.png") no-repeat center center / cover;
+  color: #fff;
+  border-bottom: 2px solid #bdbdbd;
+}
