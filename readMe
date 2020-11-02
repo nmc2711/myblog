@@ -42,3 +42,5 @@
 4. npm i history
 
 5. npm i node-sass sass-loader
+
+6. npm i axios
