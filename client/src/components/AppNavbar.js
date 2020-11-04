@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Collapse, Container, Navbar, NavbarToggler, Nav } from "reactstrap";
 import { Link } from "react-router-dom";
-
+import LoginModal from "../components/auth/LoginModal";
 const AppNavbar = () => {
   return (
     <Fragment>
@@ -13,7 +13,7 @@ const AppNavbar = () => {
           <NavbarToggler />
           <Collapse isOpen={true} navbar>
             <Nav className="ml-auto d-flex justify-content-around" navbar>
-              {true ? <h1 className="text-white">authLink</h1> : <h1 className="text-white">guestLink</h1>}
+              {false ? <h1 className="text-white">authLink</h1> : <LoginModal />}
             </Nav>
           </Collapse>
         </Container>
