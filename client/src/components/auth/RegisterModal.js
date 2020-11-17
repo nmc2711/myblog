@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { CLEAR_ERROR_REQUEST } from "../../redux/types";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { CLEAR_ERROR_REQUEST, REGISTER_REQUEST } from "../../redux/types";
+import { NavLink, Modal, ModalHeader, ModalBody, Alert, Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 const RegisterModal = () => {
   const [modal, setModal] = useState(false);
@@ -19,6 +20,7 @@ const RegisterModal = () => {
     });
     setModal(!modal);
   };
+
   useEffect(() => {
     try {
       setLocalMsg(errorMsg);
@@ -27,7 +29,7 @@ const RegisterModal = () => {
     }
   }, [errorMsg]);
 
-  const onChnage = (e) => {
+  const onChange = (e) => {
     setValue({
       ...form,
       [e.target.name]: e.target.value,
@@ -38,7 +40,38 @@ const RegisterModal = () => {
     e.preventDefault();
     const { name, email, password } = form;
     const newUser = { name, email, password };
-    console.log(newUser);
+    console.log(newUser, "newUser");
+    dispatch({
+      type: REGISTER_REQUEST,
+      payload: newUser,
+    });
   };
+  return (
+    <div>
+      <NavLink onClick={handleToggle} href="#">
+        Register
+      </NavLink>
+      <Modal isOpen={modal} toggle={handleToggle}>
+        <ModalHeader toggle={handleToggle}>Register</ModalHeader>
+        <ModalBody>
+          {localMsg ? <Alert color="danger">{localMsg}</Alert> : null}
+          <Form onSubmit={onSubmit}>
+            <FormGroup>
+              <Label for="name">Name</Label>
+              <Input type="text" name="name" id="name" placeholder="Name" onChange={onChange} />
+              <Label for="email">Email</Label>
+              <Input type="email" name="email" id="email" placeholder="Email" onChange={onChange} />
+              <Label for="password">Password</Label>
+              <Input type="password" name="password" id="password" placeholder="Password" onChange={onChange} />
+              <Button color="dark" className="mt-2" block>
+                Register
+              </Button>
+            </FormGroup>
+          </Form>
+        </ModalBody>
+      </Modal>
+    </div>
+  );
 };
+
 export default RegisterModal;
