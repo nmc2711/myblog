@@ -11,6 +11,9 @@ import {
   USER_LOADING_SUCCESS,
   USER_LOADING_REQUEST,
   USER_LOADING_FAILURE,
+  REGISTER_FAILURE,
+  REGISTER_SUCCESS,
+  REGISTER_REQUEST,
 } from "../types";
 
 const initialState = {
@@ -27,6 +30,7 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
+    case REGISTER_REQUEST:
     case LOGOUT_REQUEST:
     case LOGIN_REQUEST:
       return {
@@ -34,6 +38,7 @@ const authReducer = (state = initialState, action) => {
         errorMsg: "",
         isLoading: true,
       };
+    case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       localStorage.setItem("token", action.payload.token);
       return {
@@ -56,6 +61,7 @@ const authReducer = (state = initialState, action) => {
         userRole: null,
         errorMsg: "",
       };
+    case REGISTER_FAILURE:
     case LOGOUT_FAILURE:
     case LOGIN_FAILURE:
       localStorage.removeItem("token");
