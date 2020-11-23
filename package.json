@@ -1,34 +1,42 @@
 {
-  "name": "myblog",
+  "name": "blog",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./server/server.js --exec babel-node --ignore './client"
+    "dev": "nodemon ./server/server.js --exec babel-node --ignore './client'",
+    "prebuild": "cd client && npm run build",
+    "build": "babel server --out-dir build",
+    "build:server": "babel server --out-dir build"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
+  "keywords": [],
+  "description": "",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "helmet": "^4.1.1",
-    "history": "^5.0.0",
-    "hpp": "^0.2.3",
-    "jsonwebtoken": "^8.5.1",
-    "moment": "^2.29.1",
-    "mongoose": "^5.10.10"
+    "aws-sdk": "2.706.0",
+    "bcryptjs": "2.4.3",
+    "cors": "2.8.5",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "greenlock-express": "4.0.3",
+    "helmet": "3.22.0",
+    "hpp": "0.2.3",
+    "jsonwebtoken": "8.5.1",
+    "moment": "2.26.0",
+    "mongoose": "5.9.18",
+    "multer": "1.4.2",
+    "multer-s3": "2.9.0",
+    "path": "0.12.7",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/node": "^7.12.1",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
-    "babel-loader": "^8.1.0",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.6"
+    "@babel/cli": "7.10.1",
+    "@babel/core": "7.10.2",
+    "@babel/node": "7.10.1",
+    "@babel/polyfill": "7.10.1",
+    "@babel/preset-env": "7.10.2",
+    "babel-loader": "8.1.0",
+    "morgan": "1.10.0",
+    "nodemon": "2.0.4"
   }
 }
